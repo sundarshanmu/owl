@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" role="img" aria-label="owl">
+  <title>owl</title>
+
+  <defs>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&amp;display=swap');
+    </style>
+
+    <linearGradient id="sunGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#BAE6FD"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+
+    <radialGradient id="moonGrad" cx="0.4" cy="0.4" r="0.7">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="60%" stop-color="#BAE6FD"/>
+      <stop offset="100%" stop-color="#7DD3FC"/>
+    </radialGradient>
+
+    <radialGradient id="centerGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#0EA5E9" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#0EA5E9" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Dark frame -->
+  <rect x="0" y="0" width="144" height="144" rx="32" fill="#0F172A"/>
+
+  <!-- Soft center glow halo -->
+  <circle cx="72" cy="60" r="44" fill="url(#centerGlow)"/>
+
+  <!-- BACKGROUND NETWORK MARK (demac-style, faded) -->
+  <g transform="translate(72 60) scale(1.85)" opacity="0.38">
+    <!-- connection lines -->
+    <line x1="0" y1="0" x2="-22" y2="-18" stroke="#38BDF8" stroke-width="0.4"/>
+    <line x1="0" y1="0" x2="26" y2="-14" stroke="#38BDF8" stroke-width="0.4"/>
+    <line x1="0" y1="0" x2="-26" y2="10" stroke="#38BDF8" stroke-width="0.4"/>
+    <line x1="0" y1="0" x2="20" y2="20" stroke="#38BDF8" stroke-width="0.4"/>
+    <line x1="0" y1="0" x2="-10" y2="26" stroke="#38BDF8" stroke-width="0.4"/>
+    <line x1="0" y1="0" x2="30" y2="2" stroke="#38BDF8" stroke-width="0.4"/>
+    <line x1="-22" y1="-18" x2="26" y2="-14" stroke="#38BDF8" stroke-width="0.4"/>
+    <line x1="26" y1="-14" x2="30" y2="2" stroke="#38BDF8" stroke-width="0.4"/>
+    <line x1="-26" y1="10" x2="-10" y2="26" stroke="#38BDF8" stroke-width="0.4"/>
+    <line x1="30" y1="2" x2="20" y2="20" stroke="#38BDF8" stroke-width="0.4"/>
+    <!-- primary nodes -->
+    <rect x="-25" y="-21" width="5" height="5" fill="#0EA5E9"/>
+    <rect x="23" y="-17" width="5" height="5" fill="#0EA5E9"/>
+    <rect x="-29" y="7" width="5" height="5" fill="#0EA5E9"/>
+    <rect x="17" y="17" width="5" height="5" fill="#0EA5E9"/>
+    <rect x="-13" y="23" width="5" height="5" fill="#0EA5E9"/>
+    <rect x="27" y="-1" width="5" height="5" fill="#0EA5E9"/>
+    <!-- tertiary scatter -->
+    <rect x="33" y="-12" width="2.5" height="2.5" fill="#7DD3FC"/>
+    <rect x="-34" y="-3" width="2.5" height="2.5" fill="#7DD3FC"/>
+    <rect x="-18" y="-30" width="2.5" height="2.5" fill="#7DD3FC"/>
+    <rect x="10" y="30" width="2.5" height="2.5" fill="#7DD3FC"/>
+    <rect x="-24" y="26" width="2.5" height="2.5" fill="#7DD3FC"/>
+    <rect x="34" y="11" width="2.5" height="2.5" fill="#7DD3FC"/>
+    <rect x="6" y="-32" width="2.5" height="2.5" fill="#7DD3FC"/>
+    <rect x="-32" y="18" width="2.5" height="2.5" fill="#7DD3FC"/>
+  </g>
+
+  <!-- Mark, centered at (72, 60) -->
+  <g transform="translate(72 60)">
+
+    <!-- SUN: concentric rings around the moon -->
+    <g fill="none" stroke="url(#sunGrad)" stroke-linecap="round">
+      <circle cx="0" cy="0" r="28" stroke-width="2" opacity="0.3"/>
+      <circle cx="0" cy="0" r="22" stroke-width="2" opacity="0.55"/>
+      <circle cx="0" cy="0" r="16" stroke-width="2" opacity="0.85"/>
+    </g>
+
+    <!-- FULL MOON at center -->
+    <circle cx="0" cy="0" r="10" fill="url(#moonGrad)"/>
+    <!-- subtle moon crater highlight -->
+    <circle cx="-2" cy="-2" r="4" fill="#FFFFFF" opacity="0.25"/>
+  </g>
+
+  <!-- Wordmark (demac style) -->
+  <text x="72" y="124" text-anchor="middle" font-family="Inter, -apple-system, system-ui, sans-serif" font-size="22" font-weight="500" letter-spacing="-0.8" fill="#F8FAFC">ow<tspan fill="#0EA5E9">l</tspan></text>
+</svg>
