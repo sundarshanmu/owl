@@ -622,6 +622,159 @@ a { color: inherit; text-decoration: none; }
   .seg-deep { padding: 22px; }
   .seg-deep-title { font-size: 28px; }
 }
+
+/* ============================================================
+   BLUEPRINT VIEW — Founder's playbook
+   Uses theme variables so it works in both dark + light modes.
+   ============================================================ */
+.bp-hero { padding: 40px 0 56px; border-bottom: 1px solid var(--border); margin-bottom: 56px; }
+.bp-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+.bp-eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
+.bp-title { font-size: clamp(40px, 6vw, 72px); line-height: 1.02; letter-spacing: -0.025em; font-weight: 600; color: var(--text); margin-bottom: 24px; }
+.bp-title .serif { font-weight: 400; color: var(--accent); }
+.bp-deck { font-size: 18px; line-height: 1.6; color: var(--text-mute); max-width: 760px; margin-bottom: 32px; }
+.bp-byline { display: flex; gap: 24px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); padding-top: 24px; border-top: 1px solid var(--border); }
+.bp-byline span strong { color: var(--text); font-weight: 600; }
+
+.bp-verdict { margin-top: 36px; background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 16px; padding: 28px 32px; display: grid; grid-template-columns: auto 1fr auto; gap: 28px; align-items: center; }
+.bp-verdict .stamp { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 14px; letter-spacing: 0.04em; border: 1px solid var(--accent); color: var(--accent); padding: 8px 16px; border-radius: 100px; text-transform: uppercase; white-space: nowrap; }
+.bp-verdict .answer { font-family: 'Instrument Serif', serif; font-size: 24px; line-height: 1.35; color: var(--text); font-style: italic; }
+.bp-verdict .answer b { color: var(--accent); font-style: normal; font-weight: 600; font-family: 'Inter', sans-serif; font-size: 22px; }
+.bp-verdict .meta { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-mute); text-align: right; line-height: 1.6; }
+.bp-verdict .meta b { color: var(--accent); font-weight: 600; }
+@media (max-width: 760px) { .bp-verdict { grid-template-columns: 1fr; gap: 16px; } .bp-verdict .meta { text-align: left; } }
+
+/* Stat strip */
+.bp-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin-bottom: 64px; background: var(--surface); }
+.bp-stat { padding: 24px 22px; border-right: 1px solid var(--border); }
+.bp-stat:last-child { border-right: none; }
+.bp-stat .v { font-size: 32px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); line-height: 1; }
+.bp-stat .v small { font-size: 18px; color: var(--accent); font-weight: 500; margin-left: 2px; }
+.bp-stat .l { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-top: 10px; }
+@media (max-width: 760px) { .bp-stats { grid-template-columns: repeat(2, 1fr); } .bp-stat:nth-child(2) { border-right: none; } .bp-stat:nth-child(1), .bp-stat:nth-child(2) { border-bottom: 1px solid var(--border); } }
+
+/* TOC */
+.bp-toc { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin-bottom: 72px; }
+.bp-toc a { background: var(--surface); padding: 18px 22px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: background 0.15s; font-size: 14px; font-weight: 500; color: var(--text); }
+.bp-toc a:hover { background: var(--surface-2); color: var(--accent); }
+.bp-toc a .num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent); letter-spacing: 0.08em; }
+
+/* Sections */
+.bp-section { padding: 56px 0; border-bottom: 1px solid var(--border); }
+.bp-section:last-of-type { border-bottom: none; }
+.bp-section-head { margin-bottom: 36px; }
+.bp-section-num { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 14px; }
+.bp-section h2 { font-size: clamp(30px, 4vw, 44px); line-height: 1.1; letter-spacing: -0.02em; font-weight: 600; color: var(--text); margin-bottom: 14px; }
+.bp-section h2 .serif { font-weight: 400; color: var(--accent); }
+.bp-section-deck { font-size: 16px; color: var(--text-mute); line-height: 1.65; max-width: 720px; }
+
+.bp-section h3 { font-size: 24px; font-weight: 600; line-height: 1.2; color: var(--text); margin: 36px 0 14px; letter-spacing: -0.01em; }
+.bp-section h3 .serif { color: var(--accent); font-weight: 400; }
+.bp-section h4 { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin: 22px 0 10px; font-weight: 600; }
+.bp-section p { color: var(--text-mute); margin-bottom: 14px; max-width: 75ch; line-height: 1.65; }
+.bp-section p strong, .bp-section li strong { color: var(--text); font-weight: 600; }
+.bp-section ul, .bp-section ol { margin: 0 0 16px 22px; color: var(--text-mute); }
+.bp-section li { margin-bottom: 8px; line-height: 1.6; max-width: 72ch; }
+.bp-section em.note { font-style: italic; color: var(--text-dim); }
+
+/* Why-cards (4-up) */
+.bp-why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 28px 0; }
+.bp-why-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px; transition: border-color 0.2s, transform 0.2s; }
+.bp-why-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.bp-why-card .num { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 32px; color: var(--accent); line-height: 1; }
+.bp-why-card h4 { font-family: 'Inter', sans-serif; font-size: 16px; color: var(--text); margin: 10px 0; text-transform: none; letter-spacing: -0.01em; font-weight: 600; }
+.bp-why-card p { font-size: 13.5px; color: var(--text-mute); margin: 0; line-height: 1.55; }
+
+/* Pull quote */
+.bp-pull { margin: 40px 0; padding: 28px 32px; border-left: 3px solid var(--accent); background: var(--surface); border-radius: 0 12px 12px 0; }
+.bp-pull p { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 22px; line-height: 1.4; color: var(--text); max-width: none; margin: 0; }
+.bp-pull cite { display: block; margin-top: 14px; font-style: normal; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); }
+
+/* Ranking cards */
+.bp-rank-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 24px 0; }
+.bp-rank-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 26px; position: relative; transition: transform 0.2s, border-color 0.2s; }
+.bp-rank-card:hover { transform: translateY(-2px); border-color: var(--border-bright); }
+.bp-rank-card.gold { border-top: 3px solid var(--accent); }
+.bp-rank-card.silver { border-top: 3px solid var(--amber); }
+.bp-rank-card.bronze { border-top: 3px solid var(--text-dim); }
+.bp-rank-card .badge { position: absolute; top: 14px; right: 14px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; padding: 4px 10px; border-radius: 100px; }
+.bp-rank-card.gold .badge { background: var(--accent-soft); color: var(--accent); }
+.bp-rank-card.silver .badge { background: rgba(251, 191, 36, 0.12); color: var(--amber); }
+.bp-rank-card.bronze .badge { background: var(--surface-2); color: var(--text-mute); }
+.bp-rank-card .meta-line { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 13px; color: var(--text-dim); margin-bottom: 8px; margin-top: 10px; }
+.bp-rank-card .name { font-size: 22px; font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; color: var(--text); margin-bottom: 12px; }
+.bp-rank-card > p { font-size: 13.5px; color: var(--text-mute); margin-bottom: 14px; line-height: 1.55; }
+.bp-rank-card .metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; padding-top: 14px; border-top: 1px solid var(--border); font-family: 'JetBrains Mono', monospace; }
+.bp-rank-card .metrics div span { display: block; font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 2px; }
+.bp-rank-card .metrics div b { font-size: 12.5px; color: var(--text); font-weight: 600; }
+
+/* Recommended hero block */
+.bp-recommended { background: var(--surface); border: 1px solid var(--accent); border-radius: 18px; padding: 32px; margin: 28px 0 12px; box-shadow: 0 0 0 4px var(--accent-soft); }
+.bp-recommended .label { display: inline-block; background: var(--accent); color: var(--on-accent); padding: 5px 12px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 100px; font-weight: 600; }
+.bp-recommended h3 { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 32px; color: var(--text); margin: 16px 0 10px; font-weight: 400; line-height: 1.2; }
+.bp-recommended > p { color: var(--text-mute); font-size: 15px; line-height: 1.6; max-width: 820px; }
+.bp-recommended .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px; margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border); }
+.bp-recommended .why-grid div { font-size: 13px; color: var(--text-mute); line-height: 1.5; }
+.bp-recommended .why-grid span { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; font-weight: 600; }
+
+/* Tables */
+.bp-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; margin: 18px 0; }
+.bp-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 720px; }
+.bp-table th { background: var(--surface-2); padding: 14px 18px; text-align: left; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-mute); border-bottom: 1px solid var(--border); font-weight: 600; }
+.bp-table td { padding: 14px 18px; border-bottom: 1px solid var(--border); color: var(--text-mute); vertical-align: top; line-height: 1.55; }
+.bp-table tbody tr:last-child td { border-bottom: none; }
+.bp-table tbody tr:hover td { background: var(--surface); }
+.bp-table td b { color: var(--text); font-weight: 600; }
+.bp-pill { display: inline-block; padding: 3px 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.04em; border-radius: 100px; font-weight: 600; }
+.bp-pill.go { background: rgba(74, 222, 128, 0.12); color: var(--green); }
+.bp-pill.warn { background: rgba(251, 191, 36, 0.12); color: var(--amber); }
+.bp-pill.skip { background: rgba(248, 113, 113, 0.12); color: var(--red); }
+.bp-pill.note { background: var(--surface-2); color: var(--text-mute); }
+
+/* Timeline */
+.bp-timeline { margin: 28px 0; padding-left: 0; border-left: 2px solid var(--border); }
+.bp-phase { padding: 24px 0 24px 32px; position: relative; }
+.bp-phase + .bp-phase { border-top: 1px dashed var(--border); }
+.bp-phase::before { content: ''; position: absolute; left: -7px; top: 32px; width: 12px; height: 12px; background: var(--accent); border: 2px solid var(--bg); border-radius: 50%; }
+.bp-phase-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 8px; }
+.bp-phase-head h3 { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 26px; margin: 0; color: var(--text); font-weight: 400; }
+.bp-phase-when { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.bp-deliverable { margin-top: 14px; padding: 12px 16px; background: var(--surface); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; font-size: 13px; color: var(--text); }
+.bp-deliverable b { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; font-weight: 600; }
+
+/* Tech stack grid */
+.bp-stack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin: 18px 0; }
+.bp-stack-cell { background: var(--surface); padding: 22px; }
+.bp-stack-cell .layer { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 600; }
+.bp-stack-cell h4 { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 18px; color: var(--text); margin: 0 0 12px; text-transform: none; letter-spacing: 0; font-weight: 400; }
+.bp-stack-cell ul { list-style: none; margin: 0; padding: 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+.bp-stack-cell li { padding: 5px 0; border-bottom: 1px dashed var(--border); color: var(--text-mute); }
+.bp-stack-cell li:last-child { border-bottom: none; }
+.bp-stack-cell li b { color: var(--accent); font-weight: 600; }
+
+/* Two-column */
+.bp-two { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 18px 0; }
+@media (max-width: 800px) { .bp-two { grid-template-columns: 1fr; gap: 8px; } }
+
+/* Architecture diagram */
+.bp-arch { background: var(--bg-2); border: 1px solid var(--border); color: var(--text); padding: 24px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; line-height: 1.65; border-radius: 12px; overflow-x: auto; margin: 18px 0; white-space: pre; }
+.bp-arch .acc { color: var(--accent); }
+.bp-arch .grn { color: var(--green); }
+.bp-arch .org { color: var(--amber); }
+
+/* Final CTA in blueprint */
+.bp-cta-final { margin-top: 48px; padding: 36px; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; text-align: center; }
+.bp-cta-final h3 { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 28px; color: var(--text); margin-bottom: 12px; font-weight: 400; }
+.bp-cta-final p { color: var(--text-mute); margin-bottom: 20px; max-width: 580px; margin-left: auto; margin-right: auto; }
+.bp-cta-final .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+@media (max-width: 760px) {
+  .bp-hero { padding: 24px 0 36px; margin-bottom: 36px; }
+  .bp-section { padding: 36px 0; }
+  .bp-recommended { padding: 22px; }
+  .bp-arch { font-size: 10px; padding: 16px; }
+}
+
 </style>
 </head>
 <body>
@@ -677,6 +830,7 @@ a { color: inherit; text-decoration: none; }
       </div>
     </div>
     <button class="nav-link" data-route="how">How it Works</button>
+    <button class="nav-link" data-route="blueprint">Blueprint</button>
   </div>
   <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
     <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -798,6 +952,7 @@ a { color: inherit; text-decoration: none; }
 <div class="view" id="view-score"><div class="container section"><div id="score-content"></div></div></div>
 <div class="view" id="view-checklist"><div class="container section"><div id="checklist-content"></div></div></div>
 <div class="view" id="view-how"><div class="container section"><div id="how-content"></div></div></div>
+<div class="view" id="view-blueprint"><div class="container section"><div id="blueprint-content"></div></div></div>
 
 <!-- ====== FOOTER ====== -->
 <footer class="footer">
@@ -822,6 +977,7 @@ a { color: inherit; text-decoration: none; }
         <h4>Tools</h4>
         <a data-route="score">Opportunity Scoring</a>
         <a data-route="checklist">Decision Checklist</a>
+        <a data-route="blueprint">Founder's Blueprint</a>
       </div>
       <div class="footer-col">
         <h4>Sources</h4>
@@ -3059,6 +3215,675 @@ function renderHow() {
   document.getElementById('how-content').innerHTML = html;
 }
 
+// ===== BLUEPRINT VIEW =====
+function renderBlueprint() {
+  const html = `
+    <!-- HERO -->
+    <div class="bp-hero">
+      <div class="bp-eyebrow">The Founder's Brief · Vol. I, No. 1</div>
+      <h1 class="bp-title">Where to <span class="serif">build</span> &amp; where to <span class="serif">stay</span> in fintech.</h1>
+      <p class="bp-deck">A complete operating plan — segment, region, products, execution, technology stack, and architecture — for founding a fintech company that survives consolidation cycles, regulatory tightening, and the AI reset. The recommendation here is singular and absolute, with the next-segment expansion already mapped.</p>
+      <div class="bp-byline">
+        <span><strong>Source ·</strong> owl Fintech Market Intelligence</span>
+        <span><strong>Horizon ·</strong> 10-Year Build</span>
+        <span><strong>Posture ·</strong> Long-Game / High-Conviction</span>
+        <span><strong>Issued ·</strong> 28 April 2026</span>
+      </div>
+
+      <div class="bp-verdict">
+        <div class="stamp">The Verdict</div>
+        <div class="answer">Start in <b>RegTech &amp; Compliance Infrastructure</b> for fintechs in <b>India &amp; the GCC corridor</b>. Then expand into <b>Embedded Finance Infrastructure</b> by month 30.</div>
+        <div class="meta">Conviction · <b>91 / 100</b><br/>Decision · <b>COMMIT</b></div>
+      </div>
+    </div>
+
+    <!-- STAT STRIP -->
+    <div class="bp-stats">
+      <div class="bp-stat"><div class="v">$460.8<small>B</small></div><div class="l">Global Fintech TAM 2026</div></div>
+      <div class="bp-stat"><div class="v">$1.76<small>T</small></div><div class="l">Forecast 2034 · 18.2% CAGR</div></div>
+      <div class="bp-stat"><div class="v">22<small>%</small></div><div class="l">Profitable US Fintechs (up from 8%)</div></div>
+      <div class="bp-stat"><div class="v">24</div><div class="l">Founder-Ready Niches Mapped</div></div>
+    </div>
+
+    <!-- TOC -->
+    <div class="bp-toc">
+      <a href="#bp-thesis">The Thesis &amp; Why It Holds<span class="num">01</span></a>
+      <a href="#bp-segment">Segment &amp; Region · Top 3<span class="num">02</span></a>
+      <a href="#bp-execution">Execution Plan · 30 Months<span class="num">03</span></a>
+      <a href="#bp-stack">Technology Stack<span class="num">04</span></a>
+      <a href="#bp-design">Product Architecture<span class="num">05</span></a>
+      <a href="#bp-next">Next Segment · Expansion<span class="num">06</span></a>
+      <a href="#bp-moat">The Moat &amp; Final Note<span class="num">07</span></a>
+    </div>
+
+    <!-- §01 THESIS -->
+    <section class="bp-section" id="bp-thesis">
+      <div class="bp-section-head">
+        <div class="bp-section-num">§ 01</div>
+        <h2>The thesis: <span class="serif">build the rails, not the ride.</span></h2>
+        <p class="bp-section-deck">You asked for a long-game play with no fallback option. That rules out the loud, consumer-facing categories (neobanks, BNPL, crypto exchanges) where survival depends on capital cycles and brand wars. The only fintech segments that <strong>compound for a decade regardless of the macro</strong> are the ones financial institutions are <em>forced</em> to use.</p>
+      </div>
+
+      <div class="bp-why-grid">
+        <div class="bp-why-card">
+          <div class="num">1.</div>
+          <h4>Compliance is non-optional.</h4>
+          <p>Every fintech, bank, and platform offering financial services must do KYC, AML, transaction monitoring, sanctions screening, and regulatory reporting. The US GENIUS Act, EU MiCA &amp; DORA, India's DPDP Act, and the EU AI Act have <strong>hard-coded RegTech as core infrastructure</strong> from 2025 onward.</p>
+        </div>
+        <div class="bp-why-card">
+          <div class="num">2.</div>
+          <h4>The math compounds.</h4>
+          <p>RegTech reduces compliance costs 30–50% for mid-sized fintechs. Pricing is <em>per-transaction</em> and <em>per-API-call</em>, not per-seat — so revenue scales with the customer's growth curve, not their headcount. This is the SaaS economics every category dreams of.</p>
+        </div>
+        <div class="bp-why-card">
+          <div class="num">3.</div>
+          <h4>AI gives you a 10-year window.</h4>
+          <p>Legacy RegTech (Actimize, Refinitiv) is built on rules engines from the 2010s. Agentic AI on graph-based transaction data delivers 60–80% lower false-positive rates. <strong>Replacement cycle is measured in years</strong>, not months — defensible.</p>
+        </div>
+        <div class="bp-why-card">
+          <div class="num">4.</div>
+          <h4>You don't need a banking license.</h4>
+          <p>Unlike neobanks or lending, RegTech is sold to financial institutions — they hold the licenses. You stay capital-light, software-margin, and avoid the regulatory capital trap that kills most fintechs in year 5.</p>
+        </div>
+      </div>
+
+      <div class="bp-pull">
+        <p>"The strongest opportunities lie in payments, SME finance, embedded banking, insurtech, and cross-border money movement — but the only segment that wins regardless of which of those wins is the one selling shovels to all of them."</p>
+        <cite>— Synthesis from owl Landscape · Trend Heatmap · Q2 2026</cite>
+      </div>
+    </section>
+
+    <!-- §02 SEGMENT -->
+    <section class="bp-section" id="bp-segment">
+      <div class="bp-section-head">
+        <div class="bp-section-num">§ 02</div>
+        <h2>The top 3 segments &mdash; <span class="serif">ranked, with the pick called out.</span></h2>
+        <p class="bp-section-deck">Ranking is based on owl's heat × opportunity matrix, intersected with three founder-grade filters: defensibility, capital efficiency, and 10-year regulatory tailwind.</p>
+      </div>
+
+      <div class="bp-rank-grid">
+        <div class="bp-rank-card gold">
+          <div class="badge">RANK 01 · BUILD</div>
+          <div class="meta-line">Pick this. Start Monday.</div>
+          <div class="name">RegTech &amp; Compliance Infrastructure</div>
+          <p>Selling KYC/AML, transaction monitoring, sanctions screening, regulatory reporting, and AI model audit tooling to fintechs and banks. Sticky, mandatory, per-API pricing.</p>
+          <div class="metrics">
+            <div><span>TAM 2026</span><b>$22.4B</b></div>
+            <div><span>CAGR to 2030</span><b>23.1%</b></div>
+            <div><span>Defensibility</span><b>Very High</b></div>
+            <div><span>Capital intensity</span><b>Low</b></div>
+            <div><span>License required</span><b>None</b></div>
+            <div><span>Time to first ₹</span><b>5–7 mo</b></div>
+          </div>
+        </div>
+
+        <div class="bp-rank-card silver">
+          <div class="badge">RANK 02 · NEXT</div>
+          <div class="meta-line">Expand here in Year 3.</div>
+          <div class="name">Embedded Finance Infrastructure (BaaS)</div>
+          <p>API-first banking, lending, and payments rails for non-financial platforms (e-commerce, SaaS, mobility). The natural adjacency once you own the compliance layer.</p>
+          <div class="metrics">
+            <div><span>TAM 2026</span><b>$85.8B</b></div>
+            <div><span>CAGR to 2036</span><b>15.8%</b></div>
+            <div><span>Defensibility</span><b>High</b></div>
+            <div><span>Capital intensity</span><b>Medium</b></div>
+            <div><span>License</span><b>Partner-bank</b></div>
+            <div><span>Time to first ₹</span><b>9–12 mo</b></div>
+          </div>
+        </div>
+
+        <div class="bp-rank-card bronze">
+          <div class="badge">RANK 03 · WATCH</div>
+          <div class="meta-line">Optionality, not commitment.</div>
+          <div class="name">SME Cross-Border Payments &amp; Treasury</div>
+          <p>Stablecoin-rail B2B payments, FX, and treasury for SME exporters/importers. Regulatory clarity from GENIUS Act + MiCA opened this in 2025.</p>
+          <div class="metrics">
+            <div><span>TAM 2026</span><b>$18.6B</b></div>
+            <div><span>CAGR to 2030</span><b>21.4%</b></div>
+            <div><span>Defensibility</span><b>Medium</b></div>
+            <div><span>Capital intensity</span><b>High (float)</b></div>
+            <div><span>License</span><b>PSP/EMI/corridor</b></div>
+            <div><span>Time to first ₹</span><b>14–18 mo</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bp-recommended">
+        <div class="label">FOUNDER'S PICK</div>
+        <h3>RegTech, India-first, then GCC, then Singapore.</h3>
+        <p>India offers the world's most demanding regulatory regime (RBI, SEBI, IRDAI, DPDP Act) running on the world's most digitised financial rails (UPI, Account Aggregator, DigiLocker). If your product survives India, it survives anywhere. The GCC (UAE/Saudi) gives you premium ARPU and a sandbox-friendly regulator (DFSA, SAMA). Singapore (MAS sandbox) is your global enterprise launchpad in Year 2.</p>
+        <div class="why-grid">
+          <div><span>Why India first</span>16,461 fintechs, 2,891 funded — every one a buyer of compliance tooling.</div>
+          <div><span>Why GCC second</span>$200K+ deal sizes, English-speaking enterprise buyers, MENA fintech budgets up 34% YoY.</div>
+          <div><span>Why Singapore third</span>MAS Project Greenprint, ASEAN gateway, regulator-as-customer model proven.</div>
+          <div><span>Why not US first</span>Crowded RegTech (Alloy, Persona, Sardine), longer sales cycles, no infrastructural data advantage.</div>
+        </div>
+      </div>
+
+      <h3>Top 3 product wedges within the chosen segment</h3>
+      <p>Inside RegTech, you do not build a "compliance platform." You pick one mandatory workflow, win it cleanly, and sell adjacent modules from there. These are the three with the strongest founder-product fit and the cleanest land-and-expand math.</p>
+
+      <div class="bp-table-wrap">
+        <table class="bp-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Product Wedge</th>
+              <th>What it does</th>
+              <th>Why it wins long-term</th>
+              <th>Yr-1 ARR target</th>
+              <th>Verdict</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>01</b></td>
+              <td><b>AI-native Transaction Monitoring + Sanctions Screening</b></td>
+              <td>Replace legacy rules-based AML systems (Actimize, Oracle) with a graph-AI engine that scores transactions in real-time, with full explainability for regulators (EU AI Act compliant).</td>
+              <td>Every fintech and bank must do this; legacy false-positive rates of 95%+ create painful, immediate value.</td>
+              <td>$1.2M – $1.8M</td>
+              <td><span class="bp-pill go">BUILD FIRST</span></td>
+            </tr>
+            <tr>
+              <td><b>02</b></td>
+              <td><b>Continuous KYC / Perpetual KYB Engine</b></td>
+              <td>Move customers off the "KYC-once" model to continuous, event-triggered re-verification using Account Aggregator data, sanctions deltas, and adverse-media graph signals.</td>
+              <td>Regulators globally are mandating ongoing diligence; locks in renewal revenue with the customer's own user base growth.</td>
+              <td>$0.6M – $1.0M (Yr 2)</td>
+              <td><span class="bp-pill note">PHASE 2</span></td>
+            </tr>
+            <tr>
+              <td><b>03</b></td>
+              <td><b>Regulatory Reporting + AI Model Audit Layer</b></td>
+              <td>Auto-generate FIU-IND, RBI, MAS, FCA, FinCEN reports from the same data fabric. Bundle EU AI Act / DPDP model-audit trails for every credit and fraud decision a customer makes.</td>
+              <td>The EU AI Act and DPDP make model audit a legal requirement — almost no incumbents do this well.</td>
+              <td>$0.3M – $0.5M (Yr 2)</td>
+              <td><span class="bp-pill note">PHASE 2</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Region playbook · how the 3 markets stack</h3>
+      <div class="bp-table-wrap">
+        <table class="bp-table">
+          <thead>
+            <tr>
+              <th>Region</th>
+              <th>Why it ranks</th>
+              <th>Regulator(s)</th>
+              <th>ARPU band</th>
+              <th>Sales cycle</th>
+              <th>When to enter</th>
+              <th>Posture</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>India</b></td>
+              <td>Most fintechs per capita, hardest regulators, full digital stack (DPI). Survival here = global readiness.</td>
+              <td>RBI, SEBI, IRDAI, MeitY (DPDP)</td>
+              <td>$15K – $80K ACV</td>
+              <td>4–6 months</td>
+              <td>Month 0</td>
+              <td><span class="bp-pill go">PRIMARY</span></td>
+            </tr>
+            <tr>
+              <td><b>UAE / Saudi (GCC)</b></td>
+              <td>Premium ACVs, English buyers, regulators actively buying (sandbox-as-customer). Indian founders recognised.</td>
+              <td>DFSA, ADGM FSRA, SAMA, CBUAE</td>
+              <td>$80K – $300K ACV</td>
+              <td>3–5 months</td>
+              <td>Month 12</td>
+              <td><span class="bp-pill go">SECONDARY</span></td>
+            </tr>
+            <tr>
+              <td><b>Singapore / SEA</b></td>
+              <td>MAS sandbox, ASEAN HQ choice for global fintechs, English enterprise sales motion.</td>
+              <td>MAS</td>
+              <td>$60K – $200K ACV</td>
+              <td>4–7 months</td>
+              <td>Month 18</td>
+              <td><span class="bp-pill warn">TERTIARY</span></td>
+            </tr>
+            <tr>
+              <td>UK / EU</td>
+              <td>Mature buyers, rich budgets — but RegTech is crowded (ComplyAdvantage, Quantexa, Featurespace).</td>
+              <td>FCA, BaFin, AMF, MFSA</td>
+              <td>$120K – $400K ACV</td>
+              <td>9–14 months</td>
+              <td>Month 30+</td>
+              <td><span class="bp-pill note">DEFER</span></td>
+            </tr>
+            <tr>
+              <td>US</td>
+              <td>Largest market, deepest pockets — but established incumbents and 12+ month enterprise cycles.</td>
+              <td>FinCEN, OCC, state regulators</td>
+              <td>$150K – $500K ACV</td>
+              <td>10–18 months</td>
+              <td>Month 36+</td>
+              <td><span class="bp-pill skip">DO NOT START HERE</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- §03 EXECUTION -->
+    <section class="bp-section" id="bp-execution">
+      <div class="bp-section-head">
+        <div class="bp-section-num">§ 03</div>
+        <h2>The execution plan · <span class="serif">from kitchen-table to ₹100 Cr ARR.</span></h2>
+        <p class="bp-section-deck">A 30-month plan, broken into four phases. Each phase has a single outcome, a hard go/no-go gate, and a named deliverable. There are no fallback paths — every phase commits to the next.</p>
+      </div>
+
+      <div class="bp-timeline">
+        <div class="bp-phase">
+          <div class="bp-phase-head">
+            <h3>Phase 0 · Foundation</h3>
+            <div class="bp-phase-when">Month 0–2 · Pre-Code</div>
+          </div>
+          <p>You don't write a line of product code in this phase. You earn the right to build by buying signal nobody else has.</p>
+          <ul>
+            <li><b>Co-founder pairing:</b> One business/regulatory founder (ex-RBI / ex-Big-4 financial-crime / ex-bank-compliance), one technical founder with distributed-systems and ML background. <em>Solo founders should not start here.</em></li>
+            <li><b>Design partner LOIs:</b> Sign 3 paid pilot LOIs from Indian fintechs (one neobank, one lending platform, one PA/PG) at ₹15–25 lakh / 6-month pilot. <strong>If you cannot get 3 LOIs in 8 weeks, the thesis is wrong — stop.</strong></li>
+            <li><b>Entity setup:</b> Pvt Ltd in India + a Delaware C-Corp parent for future global fundraising. Get RBI <em>Regulatory Sandbox</em> application drafted.</li>
+            <li><b>Capital:</b> Raise a $1.5–2.5M seed from RegTech-literate funds (Better Capital, Blume, BEENEXT, Saison Capital, FinTech Collective).</li>
+          </ul>
+          <div class="bp-deliverable"><b>Phase Gate</b>3 paid pilot contracts signed. Seed closed. Two co-founders aligned in writing on equity, vision, and 5-year commitment.</div>
+        </div>
+
+        <div class="bp-phase">
+          <div class="bp-phase-head">
+            <h3>Phase 1 · Build the Wedge</h3>
+            <div class="bp-phase-when">Month 3–9 · MVP &rarr; First ₹</div>
+          </div>
+          <p>Single product, single workflow, deeply integrated with the three pilot customers. The goal is not features — it's a <em>reduction in their false-positive rate from ~95% to under 30%</em>, measured weekly.</p>
+          <ul>
+            <li><b>Hire:</b> 8 people total. 4 backend engineers, 1 ML engineer, 1 data engineer, 1 compliance solutions architect, 1 designer. No sales hire yet.</li>
+            <li><b>Build:</b> The graph-AI transaction monitoring engine. Every alert ships with an explainability trace good enough to file with FIU-IND.</li>
+            <li><b>Deploy:</b> On the customer's VPC (private deployment) for the first three. Kills security objections; gives painful, real-world data.</li>
+            <li><b>Compliance:</b> ISO 27001 + SOC 2 Type I started in Month 4, finished by Month 9. <em>Non-negotiable.</em></li>
+            <li><b>Metric to obsess over:</b> Customer's compliance team time saved per week. Target: 60% by Month 9.</li>
+          </ul>
+          <div class="bp-deliverable"><b>Phase Gate</b>3 pilots converted to annual contracts at ₹35–60 lakh ACV. SOC 2 Type I report. ARR run-rate ₹1.5 Cr+ by Month 9.</div>
+        </div>
+
+        <div class="bp-phase">
+          <div class="bp-phase-head">
+            <h3>Phase 2 · Land &amp; Expand in India</h3>
+            <div class="bp-phase-when">Month 9–18 · Scale to 25 customers</div>
+          </div>
+          <p>Same product, more customers, deeper inside each one. You are not adding a second product yet. Discipline here is what kills your competitors later.</p>
+          <ul>
+            <li><b>Sales motion:</b> Founder-led + 2 enterprise AEs hired Month 10–12. ICP is fintechs with 500K+ users and at least one regulated entity in the group.</li>
+            <li><b>Channel:</b> Sponsor &amp; speak at FinTech Convergence Council, Global FinTech Festival (Mumbai), MoneyLIVE. <em>Be the technical voice on AML in India.</em></li>
+            <li><b>Customer expansion:</b> Add Sanctions Screening as a paid module. ARR from existing customers should grow 60% on net-revenue-retention.</li>
+            <li><b>SOC 2 Type II + ISO 27001 certification.</b> Series A enabler.</li>
+            <li><b>Series A:</b> Raise $10–18M at Month 15–18 once you have ₹15 Cr+ ARR and 25+ paying customers. Lead from Accel / Lightspeed / Elevation / QED.</li>
+          </ul>
+          <div class="bp-deliverable"><b>Phase Gate</b>25 paying customers. ₹18–25 Cr ARR. NRR &gt; 130%. Series A closed.</div>
+        </div>
+
+        <div class="bp-phase">
+          <div class="bp-phase-head">
+            <h3>Phase 3 · GCC Beachhead</h3>
+            <div class="bp-phase-when">Month 18–30 · International + Module 2</div>
+          </div>
+          <p>Two parallel tracks. Track A: Open Dubai office, win 8–12 GCC customers at $150K+ ACV. Track B: Ship Module 2 (Continuous KYC) to your installed base.</p>
+          <ul>
+            <li><b>Dubai entity:</b> Dubai International Financial Centre (DIFC) registration. One AE + one solutions architect on the ground by Month 20.</li>
+            <li><b>Regulatory positioning:</b> Apply for ADGM FSRA RegLab participation. The endorsement halves your sales cycle.</li>
+            <li><b>Module 2 (Perpetual KYC):</b> Built on the same graph-data fabric — zero new infra, +40% ACV uplift on existing customers.</li>
+            <li><b>Hire:</b> VP Sales (ex-ComplyAdvantage / Refinitiv / Quantexa), VP Engineering, Compliance Counsel.</li>
+            <li><b>Begin building Module 3</b> (Regulatory Reporting + AI Model Audit) — to ship Month 28–30.</li>
+          </ul>
+          <div class="bp-deliverable"><b>Phase Gate</b>40+ customers across India + GCC. ₹55–75 Cr ARR. Module 2 live with 40% of base. Path-to-Series-B clear.</div>
+        </div>
+      </div>
+
+      <p style="margin-top: 24px;"><em class="note">Note · There is no Phase 4 in this document. By Month 30 you raise Series B and pivot the cap-allocation to fund the next-segment expansion described in § 06. The execution plan from Month 30 onward is intentionally re-derived at that point with fresh data — long-game founders re-plan, they don't pre-plan.</em></p>
+    </section>
+
+    <!-- §04 STACK -->
+    <section class="bp-section" id="bp-stack">
+      <div class="bp-section-head">
+        <div class="bp-section-num">§ 04</div>
+        <h2>The technology stack · <span class="serif">chosen to age well.</span></h2>
+        <p class="bp-section-deck">Every choice below is optimised for one criterion: <strong>will this still be a defensible, hireable, performant decision in 2034?</strong> Hype-resistant, vendor-lock-resistant, regulator-defensible.</p>
+      </div>
+
+      <p>The architecture is a <strong>polyglot, event-sourced, multi-tenant platform</strong> with strict deployment isolation per customer (private VPC + shared control plane). This is the only model that satisfies bank/fintech security review while still letting you ship features once and roll them everywhere.</p>
+
+      <div class="bp-stack-grid">
+        <div class="bp-stack-cell">
+          <span class="layer">Layer 1 · Edge &amp; API</span>
+          <h4>The customer-facing surface</h4>
+          <ul>
+            <li><b>Kong</b> · API gateway (open-source, no lock-in)</li>
+            <li><b>Envoy</b> · Service mesh proxy</li>
+            <li><b>OpenTelemetry</b> · Distributed tracing</li>
+            <li><b>gRPC + REST</b> · Public APIs</li>
+            <li><b>WebAuthn + mTLS</b> · Auth</li>
+          </ul>
+        </div>
+        <div class="bp-stack-cell">
+          <span class="layer">Layer 2 · Application</span>
+          <h4>Where business logic lives</h4>
+          <ul>
+            <li><b>Go</b> · Core services (latency-critical)</li>
+            <li><b>Python (FastAPI)</b> · ML serving + batch</li>
+            <li><b>Rust</b> · Stream processors (Phase 2)</li>
+            <li><b>TypeScript + React</b> · Console &amp; dashboards</li>
+            <li><b>Temporal.io</b> · Workflow orchestration</li>
+          </ul>
+        </div>
+        <div class="bp-stack-cell">
+          <span class="layer">Layer 3 · Data Plane</span>
+          <h4>Stream-first, immutable</h4>
+          <ul>
+            <li><b>Apache Kafka</b> · Event backbone</li>
+            <li><b>Apache Flink</b> · Stream processing</li>
+            <li><b>Apache Iceberg + S3</b> · Lakehouse</li>
+            <li><b>ClickHouse</b> · OLAP / dashboards</li>
+            <li><b>Postgres + Citus</b> · OLTP, sharded</li>
+          </ul>
+        </div>
+        <div class="bp-stack-cell">
+          <span class="layer">Layer 4 · Graph &amp; ML</span>
+          <h4>The differentiator</h4>
+          <ul>
+            <li><b>Neo4j</b> · Entity / transaction graphs</li>
+            <li><b>PyTorch + DGL</b> · Graph neural nets</li>
+            <li><b>MLflow + Feast</b> · ML lifecycle &amp; features</li>
+            <li><b>LangGraph</b> · Agentic compliance assistants</li>
+            <li><b>Ollama / vLLM</b> · On-prem LLM inference</li>
+          </ul>
+        </div>
+        <div class="bp-stack-cell">
+          <span class="layer">Layer 5 · Infrastructure</span>
+          <h4>Cloud-portable from day 1</h4>
+          <ul>
+            <li><b>Kubernetes (EKS / GKE)</b> · Compute</li>
+            <li><b>Terraform + Atlantis</b> · IaC</li>
+            <li><b>ArgoCD</b> · GitOps deployments</li>
+            <li><b>Vault</b> · Secrets, BYOK encryption</li>
+            <li><b>AWS primary, GCP fallback</b></li>
+          </ul>
+        </div>
+        <div class="bp-stack-cell">
+          <span class="layer">Layer 6 · Observability &amp; Sec</span>
+          <h4>Auditor-ready, day one</h4>
+          <ul>
+            <li><b>Grafana + Prometheus + Loki</b> · Metrics/logs</li>
+            <li><b>Falco + Wiz</b> · Runtime + cloud security</li>
+            <li><b>Drata / Sprinto</b> · SOC 2 / ISO automation</li>
+            <li><b>OpenFGA</b> · Fine-grained authorization</li>
+            <li><b>HSM + AWS KMS</b> · Key management</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Why these &mdash; and why <span class="serif">not</span> the obvious alternatives</h3>
+
+      <div class="bp-two">
+        <div>
+          <h4>Why Go + Python + Rust (no Java, no Node)</h4>
+          <p>Java has the ecosystem but the talent pool is exiting the language. Node is fine for CRUD but breaks under sustained low-latency stream loads. Go gives you the deployment simplicity and concurrency model fintech needs; Python is irreplaceable for ML; Rust enters in Phase 2 for the highest-throughput stream paths where every microsecond matters in fraud detection.</p>
+
+          <h4>Why Kafka + Flink, not Kinesis or managed-only</h4>
+          <p>Kafka is the only event-streaming substrate with a 10-year track record at fintech scale (Robinhood, Stripe, Goldman Sachs). Flink lets you do exactly-once stream processing, which is essential for compliance — a single duplicated alert is a regulatory incident. Avoid AWS Kinesis lock-in; you will need to deploy in customer VPCs eventually.</p>
+
+          <h4>Why Neo4j (graph-first), not just Postgres</h4>
+          <p>Money-laundering, sanctions evasion, and synthetic-identity fraud are <em>relational</em> problems — they live in the connections between entities, not in the entities themselves. Legacy AML systems use SQL and lose. A graph-native data model gives you 100× better detection on layered fraud rings, and is the single hardest thing for an incumbent to retrofit.</p>
+        </div>
+        <div>
+          <h4>Why on-prem LLM inference (Ollama / vLLM)</h4>
+          <p>You will hit a brick wall the moment a Tier-1 bank asks "does customer transaction data leave our VPC to reach OpenAI?" The answer must be no, by architecture, not by policy. Open-weight models (Llama 3.x, Qwen, Mistral) running on customer or co-located GPUs are the only durable answer for the next decade.</p>
+
+          <h4>Why Kubernetes, not "serverless"</h4>
+          <p>Serverless economics fall apart for sustained workloads at fintech volumes (you'll process 50M+ events/day per customer at scale). K8s gives you cloud portability — which is non-negotiable when a Saudi bank requires deployment inside SAMA-approved cloud only, or an Indian regulator asks for data residency proof.</p>
+
+          <h4>Why Drata / Sprinto from Day 1</h4>
+          <p>SOC 2 and ISO 27001 are not Year-3 problems. Every enterprise prospect will ask in the first call. Automating evidence collection from Month 1 turns a 9-month, ₹40 lakh painful certification into a 4-month, ₹12 lakh routine. This is the highest-ROI tooling decision you'll make in Year 1.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- §05 ARCHITECTURE -->
+    <section class="bp-section" id="bp-design">
+      <div class="bp-section-head">
+        <div class="bp-section-num">§ 05</div>
+        <h2>The product architecture · <span class="serif">three modules, one fabric.</span></h2>
+        <p class="bp-section-deck">All three product wedges share a single data fabric. Build it once, sell it three times. This is the single highest-leverage architectural decision in the entire plan.</p>
+      </div>
+
+      <h3>The unified system architecture</h3>
+      <p>Here is how the platform is composed end-to-end. The fabric in the middle is what you build first, in Phase 1; Modules 2 and 3 plug into it without re-architecting.</p>
+
+      <div class="bp-arch">┌───────────────────────────────────────────────────────────────────────────────┐
+│                          <span class="acc">CUSTOMER ENVIRONMENT</span> (per-tenant VPC)             │
+│                                                                               │
+│   <span class="org">Webhooks</span>      <span class="org">SDK / API</span>      <span class="org">SFTP / Batch</span>      <span class="org">Account Aggregator (IN)</span>   │
+│       │              │                │                    │                  │
+│       └──────────┬───┴──────────┬─────┴────────────────────┘                  │
+│                  ▼              ▼                                             │
+│         ┌────────────────────────────────────┐                                │
+│         │     <span class="acc">EDGE · KONG + ENVOY + mTLS</span>      │  ◀── auth, throttle,         │
+│         └─────────────────┬──────────────────┘     audit log                  │
+│                           ▼                                                   │
+│         ┌────────────────────────────────────┐                                │
+│         │   <span class="acc">EVENT BACKBONE · APACHE KAFKA</span>    │ ◀── single source of truth   │
+│         │   (transactions, customers, alerts)│     immutable, replayable      │
+│         └─┬─────────────┬──────────────┬─────┘                                │
+│           ▼             ▼              ▼                                      │
+│  ┌────────────┐ ┌──────────────┐ ┌──────────────┐                             │
+│  │ <span class="grn">MODULE 1</span>   │ │ <span class="grn">MODULE 2</span>     │ │ <span class="grn">MODULE 3</span>     │  ◀── three products           │
+│  │ TXN MON +  │ │ CONTINUOUS   │ │ REG REPORT + │     one shared engine       │
+│  │ SANCTIONS  │ │ KYC / KYB    │ │ MODEL AUDIT  │                             │
+│  └─────┬──────┘ └──────┬───────┘ └──────┬───────┘                             │
+│        └──────────┬────┴──────────┬─────┘                                     │
+│                   ▼               ▼                                           │
+│       ┌──────────────────────────────────────┐                                │
+│       │   <span class="acc">GRAPH FABRIC · NEO4J + DGL/GNN</span>    │ ◀── the moat                 │
+│       │   entities · relationships · risk    │                                │
+│       └────────────┬─────────────────────────┘                                │
+│                    ▼                                                          │
+│       ┌──────────────────────────────────────┐                                │
+│       │   <span class="acc">EXPLAINABILITY + AUDIT TRAIL</span>      │ ◀── EU AI Act,               │
+│       │   (every decision, every signal)     │     DPDP, FIU-IND ready        │
+│       └────────────┬─────────────────────────┘                                │
+│                    ▼                                                          │
+│       ┌──────────────────────────────────────┐                                │
+│       │ <span class="acc">LAKEHOUSE · ICEBERG + S3 + CLICKHOUSE</span> │                              │
+│       └──────────────────────────────────────┘                                │
+└───────────────────────────────────────────────────────────────────────────────┘
+                            ▲
+                            │  (control plane only, no PII crosses)
+┌───────────────────────────┴───────────────────────────────────────────────────┐
+│                  <span class="acc">SHARED CONTROL PLANE</span> (your cloud)                          │
+│  Customer mgmt · Billing · Model registry (MLflow) · Threat intel feeds       │
+│  Sanctions list updates (OFAC, UN, EU, RBI) · Regulatory rule library         │
+└───────────────────────────────────────────────────────────────────────────────┘</div>
+
+      <h3>Module 1 · Transaction Monitoring + Sanctions Screening</h3>
+      <p>This is what you ship in Phase 1. Every customer event lands in their Kafka topic, gets enriched against the Neo4j graph (where every entity, device, beneficial owner, and historical counterparty lives), passes through a graph neural net that scores it for layered-fraud / mule / sanctions-evasion patterns, and emits an alert with a structured explainability trace.</p>
+      <ul>
+        <li><b>Detection:</b> Graph-based ML — captures relational patterns rules-engines can't (e.g. fan-in/fan-out, smurfing, identity-rings). Targets: false-positive rate &lt; 30%, recall &gt; 92%.</li>
+        <li><b>Screening:</b> Real-time sanctions matching against OFAC, UN, EU, MHA, RBI lists with fuzzy + transliteration logic for Arabic/Cyrillic/Devanagari names.</li>
+        <li><b>Output:</b> Every alert ships with (a) the graph subgraph that triggered it, (b) the model's confidence and feature attributions, (c) a draft FIU/FinCEN-ready narrative.</li>
+        <li><b>Latency target:</b> p99 &lt; 200ms inline, p99 &lt; 5s post-trade.</li>
+        <li><b>Throughput target:</b> 50,000 events/sec/customer at peak (= a top-10 Indian fintech).</li>
+      </ul>
+
+      <h3>Module 2 · Continuous KYC / Perpetual KYB</h3>
+      <p>Same graph fabric, different feed. Instead of transactions, the input is identity events: Account Aggregator (India) deltas, sanctions list changes, beneficial-ownership updates from MCA/Companies House, and adverse-media signals scraped from a curated source set.</p>
+      <ul>
+        <li><b>Trigger model:</b> Event-based re-verification — an alert fires when something <em>about the customer</em> changes, not on a calendar.</li>
+        <li><b>India advantage:</b> Native Account Aggregator + DigiLocker + GSTN integration. This is the moat against US/EU competitors entering India.</li>
+        <li><b>Workflow:</b> Risk-tiered remediation — low-risk gets auto-cleared, medium gets a step-up verification (selfie + liveness), high gets routed to the customer's compliance team with full evidence pack.</li>
+      </ul>
+
+      <h3>Module 3 · Regulatory Reporting + AI Model Audit</h3>
+      <p>The lakehouse already holds every event, every alert, every decision. Module 3 turns that into regulator-ready outputs <em>and</em> proves to regulators that the AI making those decisions is auditable, unbiased, and reproducible.</p>
+      <ul>
+        <li><b>Reporting:</b> Auto-generated STRs/SARs/CTRs/EFRs in the exact format each regulator wants (FIU-IND XML, FinCEN BSA, MAS STRO, FCA SUP). Customer just reviews + signs.</li>
+        <li><b>Model audit:</b> Every model decision logged with: input features, model version, confidence, counterfactual ("what would change the outcome"), and bias-test results across protected attributes. <strong>This is what the EU AI Act requires from August 2026 — and almost no one has it.</strong></li>
+        <li><b>Drift detection:</b> Continuous monitoring of model performance vs. baseline, with auto-rollback to previous version if precision degrades &gt; 5%.</li>
+      </ul>
+
+      <h3>Cross-cutting design principles</h3>
+      <div class="bp-table-wrap">
+        <table class="bp-table">
+          <thead>
+            <tr><th>Principle</th><th>What it means in this product</th><th>Why long-term</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><b>Data residency by default</b></td><td>All customer PII stays in the customer's VPC and chosen region. The control plane never receives raw PII — only hashed identifiers and aggregate metrics.</td><td>RBI / DPDP / SAMA / DIFC compliance without per-deal renegotiation.</td></tr>
+            <tr><td><b>Event-sourced, immutable</b></td><td>Every event, decision, model version, and operator action is appended-only. You can replay any historical decision at any point.</td><td>Regulator-defensible audit trail forever.</td></tr>
+            <tr><td><b>Multi-tenant control, single-tenant data</b></td><td>One control plane orchestrates many isolated data planes. Customers share zero data; you share zero deployment overhead.</td><td>Best of both: enterprise security, SaaS economics.</td></tr>
+            <tr><td><b>Open weights, on-prem inference</b></td><td>Llama / Qwen / Mistral served via vLLM inside the customer VPC. No customer data ever crosses to a third-party LLM API.</td><td>Bank security review passes on the first call.</td></tr>
+            <tr><td><b>Bring-your-own-key encryption</b></td><td>Customer holds the KMS root key. You can't decrypt their data even if compromised. Standard for Tier-1 deals.</td><td>Highest-tier security stance in the market.</td></tr>
+            <tr><td><b>Feature flags + dark launch</b></td><td>Every new model and rule rolls out in shadow mode for ≥ 30 days before going live, with side-by-side performance comparison.</td><td>Zero-incident track record = pricing power.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- §06 NEXT SEGMENT -->
+    <section class="bp-section" id="bp-next">
+      <div class="bp-section-head">
+        <div class="bp-section-num">§ 06</div>
+        <h2>The next segment · <span class="serif">embedded finance, by design.</span></h2>
+        <p class="bp-section-deck">By Month 30 you have a graph data fabric, a multi-tenant deployment platform, and 40+ fintech customers who already trust you with their compliance. The natural — and only — adjacent segment is the one that lets you sell <strong>more</strong> into the same buyer.</p>
+      </div>
+
+      <h3>The expansion thesis</h3>
+      <p>Embedded finance is forecast to reach <strong>$370B by 2036 (15.8% CAGR)</strong>. The moat in embedded finance is not the API surface — anyone can build that — it is <em>compliance-as-a-product</em>. Every BaaS / embedded-finance platform that has failed (Synapse, Bond, Galileo's smaller clones) failed because compliance was bolted on as overhead, not built in as architecture. You are uniquely positioned: you already <em>are</em> the compliance architecture.</p>
+
+      <div class="bp-rank-grid">
+        <div class="bp-rank-card gold">
+          <div class="badge">RANK 01 · BUILD</div>
+          <div class="meta-line">Pick this in Year 3.</div>
+          <div class="name">Compliance-Native Embedded Lending</div>
+          <p>API-first lending stack (origination + servicing + collections) for non-bank platforms. Bundled with your existing AML/KYC fabric, priced per disbursement.</p>
+          <div class="metrics">
+            <div><span>Sub-segment TAM</span><b>$48.2B</b></div>
+            <div><span>CAGR</span><b>19.3%</b></div>
+            <div><span>Defensibility</span><b>Very High</b></div>
+            <div><span>Synergy</span><b>~85%</b></div>
+          </div>
+        </div>
+
+        <div class="bp-rank-card silver">
+          <div class="badge">RANK 02 · NEXT</div>
+          <div class="meta-line">Year 4 add-on.</div>
+          <div class="name">Embedded BaaS (Wallets + Cards)</div>
+          <p>White-label wallet + card issuing for SaaS platforms (HRTech, vertical SaaS, marketplaces). India-first via NPCI / RBI partner-bank model.</p>
+          <div class="metrics">
+            <div><span>Sub-segment TAM</span><b>$40.5B</b></div>
+            <div><span>CAGR</span><b>17.1%</b></div>
+            <div><span>Defensibility</span><b>High</b></div>
+            <div><span>Synergy</span><b>~70%</b></div>
+          </div>
+        </div>
+
+        <div class="bp-rank-card bronze">
+          <div class="badge">RANK 03 · WATCH</div>
+          <div class="meta-line">Optionality.</div>
+          <div class="name">Embedded Insurance Distribution</div>
+          <p>API-driven micro-insurance and embedded protection products. Smaller TAM, more carrier-dependent — but sticky once integrated.</p>
+          <div class="metrics">
+            <div><span>Sub-segment TAM</span><b>$15.4B</b></div>
+            <div><span>CAGR</span><b>20.6%</b></div>
+            <div><span>Defensibility</span><b>Medium</b></div>
+            <div><span>Synergy</span><b>~55%</b></div>
+          </div>
+        </div>
+      </div>
+
+      <h3>How the technology stack extends</h3>
+      <p>Crucially, you do not rebuild. The Year-3 stack adds three things on top of the existing fabric: a ledger (double-entry, real-money balances), a partner-bank integration layer (RBI partner banks for India; Cross River, Column, BBVA for international), and a credit-decisioning engine that <em>plugs into the same graph fabric you already own</em>.</p>
+
+      <div class="bp-arch">EXISTING (Years 1–3)            NEW (Year 3 onward)
+─────────────────────           ─────────────────────────
+Module 1 · TXN MON      ──┐
+Module 2 · CONT KYC     ──┤
+Module 3 · REG REPORT   ──┤
+                          │
+              GRAPH FABRIC (NEO4J + GNN) ──┬──▶ <span class="grn">CREDIT DECISIONING (NEW)</span>
+                          │                ├──▶ <span class="grn">LEDGER · DOUBLE-ENTRY (NEW)</span>
+              EVENT BACKBONE (KAFKA) ──────┼──▶ <span class="grn">PARTNER-BANK ADAPTERS (NEW)</span>
+                          │                └──▶ <span class="grn">CARD ISSUER GATEWAY (NEW)</span>
+              LAKEHOUSE (ICEBERG)</div>
+
+      <h3>The recommended Year-3 region playbook</h3>
+      <ul>
+        <li><b>India first (again).</b> RBI's account aggregator + UPI rails + your existing 25+ Indian fintech customers create instant distribution. Sell embedded lending into your existing customer base — they already trust your tech for compliance.</li>
+        <li><b>UAE second.</b> The Central Bank of UAE has been the most progressive regional regulator on embedded finance since 2024. Your DIFC presence from Phase 3 is the foundation.</li>
+        <li><b>Indonesia / Vietnam third.</b> Skip Singapore for embedded-lending — it's saturated. The actual SEA volume sits in Indonesia and Vietnam where embedded credit-on-platform is in its second growth wave.</li>
+      </ul>
+
+      <p style="margin-top: 18px;"><em class="note">A note on what you are <strong>not</strong> doing · You are never building a neobank, never a BNPL consumer brand, never a crypto exchange, never a robo-advisor. These are sirens. Every one of them requires a license, capital reserves, and a brand budget that destroys the unit economics of an infrastructure company. Stay infrastructure. Stay shovels.</em></p>
+    </section>
+
+    <!-- §07 MOAT -->
+    <section class="bp-section" id="bp-moat">
+      <div class="bp-section-head">
+        <div class="bp-section-num">§ 07</div>
+        <h2>The moat &amp; the <span class="serif">final note.</span></h2>
+        <p class="bp-section-deck">A long-game company has a moat that compounds. Here is what compounds for this one.</p>
+      </div>
+
+      <div class="bp-why-grid">
+        <div class="bp-why-card">
+          <div class="num">i.</div>
+          <h4>The graph compounds.</h4>
+          <p>Every transaction monitored, every entity verified, every alert resolved adds a node and ten edges to the fabric. Your fraud-detection accuracy in Year 5 will be unmatched, and unattainable, by any new entrant.</p>
+        </div>
+        <div class="bp-why-card">
+          <div class="num">ii.</div>
+          <h4>The regulator becomes a customer.</h4>
+          <p>Sandbox programs (RBI, DFSA, MAS, FCA) increasingly use vendor RegTech for their own supervision. By Year 4 you should have at least one regulator using your platform. This is the most defensible reference any RegTech company can hold.</p>
+        </div>
+        <div class="bp-why-card">
+          <div class="num">iii.</div>
+          <h4>Compliance switching costs.</h4>
+          <p>Once a fintech embeds your transaction monitoring in production, switching means re-certifying with the regulator. The lift is so high that net revenue retention can exceed 140% indefinitely.</p>
+        </div>
+        <div class="bp-why-card">
+          <div class="num">iv.</div>
+          <h4>Talent compounds where regulators do.</h4>
+          <p>India and Singapore are now exporting RegTech engineering talent to the world. Building your engineering hub in Bangalore or Pune gives you 10× hiring leverage versus building in San Francisco — and the regulatory experience is on tap.</p>
+        </div>
+      </div>
+
+      <div class="bp-pull">
+        <p>"You asked for no fallback option. Here it is. If by Month 8 you do not have three paying pilots converted to annual contracts, the thesis is wrong — not the execution. Shut the company down, return the capital, and try again. The discipline of being willing to walk away is the only thing that protects a long-game company from quietly dying for nine years."</p>
+        <cite>— § 07 · Final Note</cite>
+      </div>
+
+      <h3>The 30-day next steps</h3>
+      <ol>
+        <li><b>Week 1–2:</b> Lock in the technical co-founder. Without one, do not proceed.</li>
+        <li><b>Week 2–3:</b> Build a 6-page memo (<em>not</em> a deck) of this thesis. Send it to 12 fintech compliance heads. Aim for 6 calls.</li>
+        <li><b>Week 3–4:</b> Convert 3 of those 6 to paid pilot LOIs at ₹15–25 lakh / 6 months.</li>
+        <li><b>Week 4:</b> If 3 LOIs land, raise the seed. If not, revise the thesis on what the 12 heads said — not on what this document said.</li>
+      </ol>
+
+      <div class="bp-cta-final">
+        <h3>Use the rest of owl to pressure-test this.</h3>
+        <p>The blueprint above is one path. owl exists so you can stress-test it against the live data — score the segment, check region tailwinds, run the 12-week diligence checklist.</p>
+        <div class="actions">
+          <button class="btn btn-primary" data-route="score">Score this opportunity →</button>
+          <button class="btn btn-secondary" data-route="checklist">Run the checklist</button>
+        </div>
+      </div>
+    </section>
+  `;
+  document.getElementById('blueprint-content').innerHTML = html;
+}
+
 // ===== ROUTER =====
 function setRoute(route) {
   state.route = route;
@@ -3078,6 +3903,7 @@ function setRoute(route) {
   else if (route === 'score') renderScoring();
   else if (route === 'checklist') renderChecklist();
   else if (route === 'how') renderHow();
+  else if (route === 'blueprint') renderBlueprint();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
